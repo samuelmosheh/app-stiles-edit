@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flexbox;
+   
+}
+
+.head-menu{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    background: #AFDDFF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 5;
+    margin-bottom: 80px;
+}
+.t-header{
+    font-size: 24px;
+    padding: 3px;
+    margin: 5px;
+}
+.header-right {
+    margin: auto;
+    font-size: 10px;
+}
+#menu-bt{
+   display: none;
+}
+#menu-bt:checked ~ .menu-nav {
+    transform: translateX(0%);
+    transition: 0.8s;
+}
+#menu-bt:checked ~ .icon-th-list{
+    background: rgba(0,0,0,0.3);
+}
+.icon-th-list{
+    font-size: 27px;
+    padding: 4px;
+    margin: 4px;
+}
+.icon-th-list:hover {
+    cursor: pointer;
+    background: rgba(0,0,0,0.3);
+}
+.menu-nav {
+    padding: 0;
+    width: 95%;
+    margin: auto;
+    margin-top: 7px;
+    background-color: #60B5FF;
+    display: flex;
+    flex-wrap: wrap;
+
+    transform: translateY(-150%);
+    transition: 0.4s;
+
+}
+.main-menu {
+   
+    width: 100%;
+    margin: auto;
+    text-align: center;    
+ 
+}
+.menu-it{
+    
+    display: block;
+    list-style: none;
+    margin: 5px;
+    border-bottom: 1px solid #fff;
+}
+.a-menu { 
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    font-size: 25px;
+    display: block;
+    padding: 2px;
+    color: #fff;
+
+}
+.a-menu:hover{
+    cursor: pointer;
+    background: rgba(0,0,0,0.3);
+}
+.menu-it span{
+    font-size: 20px;
+    margin-left: 7px;
+}
+.contenedor {
+    width: 100%;
+
+}
+
+/*Estilos Mensajes de Error*/
+
+.exito {
+    width: 80%;
+    background: green;
+    margin: auto;
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+
+}
+.exito p {
+    font-size: 28px;
+}
+
+.error {
+    width: 80%;
+    background: red;
+    margin: auto;
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+
+}
+.error p {
+    font-size: 28px;
+}
+
+
+/*estilos Crear usuario*/
+
+.new-user, .form-login, .new-client, .new-mobil, .search-client,
+.new-tipo, .new-marca, .new-model, .new-insumo, .filtro-estado,
+.update-estad {
+    overflow: hidden;
+    text-align: center;
+}
+.t-2{
+    margin-bottom: 7px;
+    text-align: center;
+}
+.d-trabajador, .d-login, .d-client, .d-device, .d-search,
+.d-marca, .d-model, .d-tipo-repuesto, .d-insumo, .filtros,
+.resultado_inventario, .add_new_insumo, .add_new_tmm, 
+.list-devices {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 50px;
+    align-content: center;
+    text-align: center;
+    gap: 5px;
+    border: 1px solid #000;
+    
+    padding-bottom: 20px;
+}
+.d-trabajador label {
+    margin: auto;
+}
+.d-login label {
+    margin: auto;
+}
+.d-client label {
+    margin: auto;
+}
+.d-device label {
+    margin: auto;
+}
+.d-device a {
+    text-decoration: none;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.d-search label{
+    margin: auto;
+}
+.d-tipo-repuesto label{
+    margin: auto;
+}
+.d-model label {
+    margin: auto;
+}
+.d-marca label {
+    margin: auto;
+}
+.d-insumo label{
+    margin: auto;
+}
+.filtros label {
+    margin: auto;
+}
+.filtros a {
+    margin: auto;
+    margin-top: 5px;
+}
+.in-form {
+    width: 95%;
+    font-size: 25px;
+    border-radius: 2px solid #000;
+    margin: auto;
+    padding: 2px;
+
+}
+.add_new {
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+    margin: auto;
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 13%;
+}
+.add_new:hover {
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+}
+.sl-opt {
+    width: 95%;
+    font-size: 25px;
+    margin: auto;
+}
+.text-area {
+    width: 95%;
+    margin: auto;
+    font-size: 20px;
+}
+.registrar {
+    width: 90%;
+    margin: auto;
+    font-size: 20px;
+}
+.registrar:hover {
+    cursor: pointer;
+    background: rgba(0,0,0,0.3);
+}
+
+.uss-exist {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+    gap: 5px;
+    border: 1px solid #000;
+    
+}
+
+/*ESTILOS BUSQUEDA CLIENTE*/
+.autocomplete-results {
+    border: 1px solid #ccc;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: #fff;
+    width: 80%;
+    z-index: 1000;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.cliente-sugerencia {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.cliente-sugerencia:hover {
+    background-color: #f1f1f1;
+}
+
+.no-result {
+    padding: 10px;
+    color: #999;
+}
+
+/*estilos de tarjetas*/
+.card-device, .user-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.t-c-name {
+    margin-top: 0;
+    color: #333;
+}
+/* Botón para deshabilitar */
+.disable-user {
+    background-color: #e53935; /* rojo */
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.disable-user:hover {
+    background-color: #c62828;
+}
+
+/* Botón para habilitar (activar de nuevo) */
+.enable-user {
+    background-color: #43a047; /* verde */
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.enable-user:hover {
+    background-color: #388e3c;
+}
+
+/*ESTILOS DE BOTON DETALLE*/
+.btn-detalle {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #3b82f6;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+}
+.btn-detalle:hover {
+    background-color: #2563eb;
+}
+
+/* ESTILOS DE BOTON AÑADIR*/
+
+.btn-add {
+    background-color: #28a745;        /* Verde tipo "añadir" */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-add:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+/*estilos de estado de dispositivo*/
+
+.pendiente {
+    color: #ff9800;
+    font-weight: bold;
+}
+.en-proceso {
+    color: #2196f3;
+    font-weight: bold;
+}
+.listo {
+    color: #4caf50;
+    font-weight: bold;
+}
+.entregado {
+    color: #9c27b0;
+    font-weight: bold;
+}
+.devuelto {
+    color: #f44336;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+footer{
+    text-align: center;
+    margin-bottom: 7px;
+}
