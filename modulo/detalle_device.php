@@ -76,7 +76,7 @@
                 <input type="hidden" name="id" value="<?= $d['id'] ?>">
                 <label for="nuevo_estado">Cambiar Estado</label>
                 <select name="nuevo_estado" id="nuevo_estado" class="sl-opt">
-                    <option value="" <?= $d['estado'] == 'pendiente' ? 'selected' : '' ?>>Pendiente</option>
+                    <option value="pendiente" <?= $d['estado'] == 'pendiente' ? 'selected' : '' ?>>Pendiente</option>
                     <option value="en proceso" <?= $d['estado'] == 'en proceso' ? 'selected' : '' ?>>En Proceso</option>
                     <option value="listo" <?= $d['estado'] == 'listo' ? 'selected' : '' ?>>Listo</option>
                     <option value="entregado" <?= $d['estado'] == 'entregado' ? 'selected' : '' ?>>Entregado</option>
@@ -84,6 +84,11 @@
                 </select>
                 <input type="submit" value="Cambiar" class="registrar">
             </form>
-            
+          <?php 
+            $modo_reparacion = true;
+            $marca_id = $d['marca_id'];
+            $modelo_id = $d['modelo_id'];
+            include 'usar_insumo.php'; 
+          ?>
     </div>
 </div>

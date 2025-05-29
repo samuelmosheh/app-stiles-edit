@@ -39,6 +39,13 @@
                 <!--- RESULTADO DEL INVENTARIO CON AJAS ---->
 
     </div>
+    <div class="filtros">
+        <?php
+            $modo_reparacion = false;
+            include 'usar_insumo.php';
+
+        ?>
+    </div>
     
     <div class="add_new_insumo">
         <h2 class="t2"></h2>
