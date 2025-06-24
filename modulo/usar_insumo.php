@@ -1,10 +1,12 @@
 
 
      <h2 class="t-2">Usar Insumo en Dispositivo</h2>
-    <input type="hidden" name="dispositivo_id" value="<?= $d['id'] ?>">
 
     <form action="<?php echo BASE_URL; ?>procesadores/procesar_usar_insumo.php" class="insumo-use" method="POST">
-
+        <?php if (isset($d['id'])): ?>
+            <input type="hidden" name="dispositivo_id" value="<?= $d['id'] ?>">
+        <?php endif; ?>
+        <!-----<input type="hidden" name="tipo_operacion" value=""> ---->
         <div>
             <label for="tipo">Tipo de Insumo: </label>
             <select id="tipo_id" name="tipo" class="sl-opt">
@@ -21,7 +23,7 @@
                 ?>
             </select>
         </div>
-                    <!-- Solo si NO estás en modo reparación -->
+                    <!-- Solo si NO estás en modo reparación --> 
         
         <?php if (!$modo_reparacion): ?>
             <label for="marca_id">Marca:</label>
@@ -43,16 +45,16 @@
         
         <!-- Selector de insumos filtrados -->
             <label for="insumo_id">Insumo:</label>
-            <select id="insumo_id" name="insumo_id" required>
+            <select id="insumo_id" name="insumo_id">
                 <option value="">Seleccione un insumo</option>
             </select>
 
         <div>
             <label for="cantidad">Cantidad a Usar: </label>
-            <input type="number" name="cantidad" id="cantidad">
+            <input type="number" name="cantidad_usada" id="cantidad" min="0">
         </div>
         <div><label for="uso">Tipo de Uso: </label>
-            <select name="uso" id="uso">
+            <select name="tipo_uso" id="uso">
                 <option value="reparacion">Reparacion</option>
                 <option value="venta">Venta</option>
                 <option value="garantia">Garantia</option>
@@ -60,8 +62,8 @@
             </select>
         </div>
         <div>
-            <label for="">Observación: </label>
-            <textarea name="" id="" rows="3"></textarea>
+            <label for="observacion">Observación: </label>
+            <textarea name="observacion" id="observacion" rows="2"></textarea>
         </div>
 
         <button type="submit">Usar Insumo</button>
@@ -71,7 +73,7 @@
 // Cargar modelos al seleccionar marca
 document.getElementById('marca_id').addEventListener('change', function () {
     const marcaId = this.value;
-    fetch('modulos/ajax/obtener_modelos.php?marca_id=' + marcaId)
+    fetch('ajax/obtener_modelo.php?marca_id=' + marcaId)
         .then(res => res.json())
         .then(data => {
             const modeloSelect = document.getElementById('modelo_id');
@@ -89,7 +91,7 @@ function cargarInsumos() {
     const modeloId = <?= $modo_reparacion ? $modelo_id : "document.getElementById('modelo_id').value" ?>;
 
     if (tipoId && marcaId && modeloId) {
-        const url = `modulos/ajax/obtener_insumos.php?tipo_id=${tipoId}&marca_id=${marcaId}&modelo_id=${modeloId}`;
+        const url = `ajax/obtener_insumos.php?tipo_id=${tipoId}&marca_id=${marcaId}&modelo_id=${modeloId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
